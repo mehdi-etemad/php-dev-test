@@ -73,6 +73,11 @@ main {
   color: #666;
 }
 
+.product-image-thumb {
+  border-radius:10%;
+  transition:transform .3s;
+}
+
 .rise-shine {
   display:flex;
   gap:5px;
@@ -134,4 +139,12 @@ main {
 .order-summary th {
   border-bottom: 1px solid #eee;
   padding: 0.5rem;
+}
+
+.order-summary tr:hover {
+  background-color:#f6f6f6;
+}
+
+.order-summary tr:hover .product-image-thumb {
+  transform: scale(1.3);
 }

@@ -28,7 +28,9 @@ class Checkout extends Layout
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Product Thumbnail</td>
+                                        <td>
+                                            <img src="assets/images/product_thumb.webp" alt="Lorem Widget" width="80" height="80" class="product-image-thumb" />
+                                        </td>
                                         <td>Lorem Widget</td>
                                         <td>1</td>
                                     </tr>
