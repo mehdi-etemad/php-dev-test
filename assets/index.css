@@ -163,3 +163,40 @@ main {
   background-color: #808080;
   color:#ffffff;
 }
+
+/* Post page style */
+.post {
+  max-width: 700px;
+  margin: auto;
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.post_title {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.post_meta {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.post_body {
+  border-top: 1px solid #eee;
+  font-size: 1.05em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align:justify;
+}
+
+.post_footer {
+  font-size: 0.85em;
+  color: #555;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
