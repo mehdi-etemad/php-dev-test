@@ -73,6 +73,23 @@ main {
   color: #666;
 }
 
+.rise-shine {
+  display:flex;
+  gap:5px;
+}
+
+.rise-shine div:first-child {
+  flex:0 0 auto;
+}
+.rise-shine div:last-child {
+  flex:1;
+}
+.rise-shine label {
+  font-size:0.85rem;
+  color:#555;
+  text-align:justify;
+}
+
 .form-field__label-required {
   font-size: 0.8rem;
   font-weight: normal;
