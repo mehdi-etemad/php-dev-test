@@ -80,6 +80,13 @@ main {
   padding: 0.5rem 0;
 }
 
+.form-field__label-optional {
+  font-size: 0.8rem;
+  font-weight: normal;
+  color: #06c;
+  padding: 0.5rem 0;
+}
+
 .form-field__note {
   font-size: 0.8rem;
   color: #666;
