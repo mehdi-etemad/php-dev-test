@@ -148,3 +148,18 @@ main {
 .order-summary tr:hover .product-image-thumb {
   transform: scale(1.3);
 }
+
+.checkout-submit {
+  margin-top:2rem;
+  padding:10px;
+  width:100%;
+  border-radius:10px;
+  border-color:#cccccc;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.checkout-submit:hover {
+  background-color: #808080;
+  color:#ffffff;
+}
