@@ -1,13 +1,21 @@
 begin;
 
-create table Authors (
-  id uuid not null,
+-- create table Authors (
+--   id uuid not null,
 
-  full_name varchar(255) not null,
-  created_at timestamp not null,
-  modified_at timestamp not null,
+--   full_name varchar(255) not null,
+--   created_at timestamp not null,
+--   modified_at timestamp not null,
 
-  primary key (id)
+--   primary key (id)
+-- );
+
+CREATE TABLE Authors (
+  id CHAR(36) NOT NULL,
+  full_name VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  modified_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (id)
 );
 
 insert into Authors (id, full_name, created_at, modified_at) values (
