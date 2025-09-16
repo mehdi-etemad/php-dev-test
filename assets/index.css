@@ -164,7 +164,41 @@ main {
   color:#ffffff;
 }
 
-/* Post page style */
+/* Post index page style */
+.post-list {
+  display:flex;
+  justify-content:start;
+  flex-wrap:wrap;
+  width:700px;
+}
+.post-card {
+  width:300px;
+  background: #fff;
+  margin:0.5rem;
+  padding:0.5rem;
+  border-radius:10px;
+  box-shadow:0 4px 8px rgba(0,0,0,0.08);
+  transition:transform 0.2s ease, box-shadow 0.2s ease;
+}
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+}
+.post-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.4rem;
+}
+.post-author {
+  font-size:0.9rem;
+  color:#666;
+}
+.post-link {
+  text-decoration:none;
+  font-size: 0.9rem;
+  color:navy;
+}
+
+/* Post details page style */
 .post {
   max-width: 700px;
   margin: auto;
