@@ -27,7 +27,14 @@ class Header implements Template
                     <meta name="apple-mobile-web-app-capable" content="yes" />
                 </head>
                 <body>
-                    <header class="header"></header>
+                    <header class="header">
+                        <nav>
+                            <a href="/">Home</a>
+                            <a href="/posts">Posts List</a>
+                            <a href="/checkout">Checkout</a>
+                            <a href="/import">Import Posts</a>
+                        </nav>
+                    </header>
                     <main>
                         <div class="container">
             HTML;
