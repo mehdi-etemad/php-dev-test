@@ -14,6 +14,5 @@ class PostIndex extends Layout
                 {$context->content}
             </div>
             HTML;
-        return $mainContext;
     }
 }

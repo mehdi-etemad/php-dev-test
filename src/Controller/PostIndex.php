@@ -17,7 +17,7 @@ class PostIndex extends Controller
     {
         $context = new Context();
         $context->title = 'Posts';
-        $context->parameter['postsCount'] = count($this->posts);
+        $context->parameter['postsCount'] = (string)count($this->posts);
         $context->content = '';
         foreach($this->posts as $post) {
             $context->content .= '<div class="post-card">

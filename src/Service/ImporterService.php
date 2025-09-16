@@ -4,11 +4,12 @@ namespace silverorange\DevTest\Service;
 
 class ImporterService
 {
-    private $jsonArray = [];
+    /** @var array<int, array<string, mixed>> */
+    private array $jsonArray = [];
     public function __construct(private \PDO $db)
     {}
 
-    public function import()
+    public function import(): string
     {
         $result = null;
         //
@@ -24,18 +25,21 @@ class ImporterService
                 if($file != '.' && $file != '..') {
                     $readCount++;
                     $jsonContent = file_get_contents($path.'/'.$file);
-                    $jsonData = json_decode($jsonContent, true);
-                    if(
-                        empty($jsonData['id']) ||
-                        empty($jsonData['title']) ||
-                        empty($jsonData['body']) ||
-                        empty($jsonData['created_at']) ||
-                        empty($jsonData['modified_at']) ||
-                        empty($jsonData['author'])
-                    )
+                    if($jsonContent !== false) {
+                        $jsonData = json_decode($jsonContent, true);
+                        if(
+                            empty($jsonData['id']) ||
+                            empty($jsonData['title']) ||
+                            empty($jsonData['body']) ||
+                            empty($jsonData['created_at']) ||
+                            empty($jsonData['modified_at']) ||
+                            empty($jsonData['author'])
+                        )
+                            $invalidJSONFormat++;
+                        else
+                            $this->jsonArray[$jsonData['id']] = $jsonData;
+                    } else
                         $invalidJSONFormat++;
-                    else
-                        $this->jsonArray[$jsonData['id']] = $jsonData;
                 }
             }
             closedir($dir);
@@ -56,7 +60,7 @@ class ImporterService
         return $result;
     }
 
-    private function checkInsertedPosts(array $postIdArray)
+    private function checkInsertedPosts(array $postIdArray): array
     {
         $inserted = [];
         $placeholders = rtrim(str_repeat('?,', count($postIdArray)), ',');
@@ -68,7 +72,7 @@ class ImporterService
         return $inserted;
     }
 
-    private function insertPosts(array $postIdArray)
+    private function insertPosts(array $postIdArray): int
     {
         $success = 0;
         $stmt = $this->db->prepare("INSERT INTO posts

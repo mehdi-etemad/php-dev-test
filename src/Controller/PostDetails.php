@@ -28,10 +28,10 @@ class PostDetails extends Controller
             $context->title = $this->post->title;
             $converter = new CommonMarkConverter();
             $context->content = $converter->convert($this->post->body)->getContent();
-            $context->parameter['id'] = $this->post->id;
-            $context->parameter['created_at'] = date_format(date_create($this->post->created_at), 'Y-m-d');
-            $context->parameter['modified_at'] = date_format(date_create($this->post->modified_at), 'Y-m-d');
-            $context->parameter['author'] = $this->post->author;
+            $context->parameter['id'] = (string)$this->post->id;
+            $context->parameter['created_at'] = (string)date_format(date_create($this->post->created_at), 'Y-m-d');
+            $context->parameter['modified_at'] = (string)date_format(date_create($this->post->modified_at), 'Y-m-d');
+            $context->parameter['author'] = (string)$this->post->author;
         }
 
         return $context;
